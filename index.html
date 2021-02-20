@@ -6,6 +6,9 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Frontend Mentor | Fylo landing page with dark theme and features grid</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -16,8 +19,8 @@
 </head>
 <body>
   <nav class="navbar">
-    <div class="container">
-      <img class="image" src="images/logo.svg" alt="logo">
+    <div class="container flex">
+      <img class="logo" src="images/logo.svg" alt="logo">
       <ul class="list">
         <li class="item"><a>Features</a></li>
         <li class="item"><a>Team</a></li>
@@ -27,7 +30,8 @@
   </nav>
 
   <div class="hero">
-    <div class="conainer">
+    <div class="container">
+      <img src="images/illustration-intro.png" alt="intro" class="image">
       <h1 class="title">All your files in one secure location, accessible anywhere.</h1>
       <p class="text">
         Fylo stores all your most important files in one secure location. Access them wherever 
@@ -40,7 +44,7 @@
 
   <!-- Start features -->
 
-  <div class="features">
+  <div class="features container">
     <div class="feature">
       <img src="images/icon-access-anywhere.svg" alt="icon" class="image">
       <h3 class="title">Access your files, anywhere</h3>
@@ -76,17 +80,18 @@
   <!-- End features -->
 
   <!-- Start productive section -->
-  <section class="productive">
-    <img class="img" src="images/illustration-stay-productive.png" alt="productive people">
+  <section class="productive container">
+    <img class="image" src="images/illustration-stay-productive.png" alt="productive people">
     <div class="text">
       
       <h1 class="title">Stay productive, wherever you are</h1>
-      <p class="p">Never let location be an issue when accessing your files. Fylo has you covered for all of your file 
-        storage needs.<br/>
+      <p class="paragraph">Never let location be an issue when accessing your files. Fylo has you covered for all of your file 
+        storage needs.</p>
+      <p>
         Securely share files and folders with friends, family and colleagues for live collaboration. No email 
         attachments required.
       </p>
-        <a href="#" class="link"> See how Fylo works</a>
+        <a href="#" class="link"> See how Fylo works  <i class="icon fas fa-arrow-circle-right"></i></a>
       </div>
     </section>
     
@@ -160,6 +165,7 @@
       <img src="images/logo.svg" alt="website logo" >
     </div>
     <div class="text">
+      <i class="fas fa-map-marker-alt"></i>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
         dolore magna aliqua
