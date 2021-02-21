@@ -48,8 +48,8 @@ The designs were created to the following widths:
 
 $Dark-Blue-1 : hsl(217, 28%, 15%); // (intro and email sign up background)
 $main-background : hsl(218, 28%, 13%); // (main background)
-$Dark-Blue-3 : hsl(216, 53%, 9%);  // (footer background)
-$Dark-Blue-4 : hsl(219, 30%, 18%); //(testimonials background)
+$footer-bg : hsl(216, 53%, 9%);  // (footer background)
+$testimonials-bg: hsl(219, 30%, 18%); //(testimonials background)
 
 
 //### Accent
@@ -57,7 +57,7 @@ $Dark-Blue-4 : hsl(219, 30%, 18%); //(testimonials background)
 $Cyan : hsl(176, 68%, 64%); //(inside call-to-action gradient)
 $Blue: hsl(198, 60%, 50%); // (inside call-to-action gradient)
 $Light-Red : hsl(0, 100%, 63%); //(error)
-
+$white:#eee;
 
 // fonts
 
@@ -69,7 +69,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: $main-background;
-    color: #eee;
+    color: $white;
     text-align: center;
     overflow-x: hidden; // remove it later
     line-height: 1.7;
@@ -83,7 +83,7 @@ body{
 }
 
 .navbar{
-    color: white;
+    color: $white;
     background-color: $Dark-Blue-1;
     padding: 1.2em 1.2em;
     .container{
@@ -101,10 +101,27 @@ body{
 
         li{
             display: inline;
+            &:hover{
+                text-decoration: underline;
+                color: white;
+                cursor: pointer;
+            }
         }
     }
 }
 
+.button{
+    background:linear-gradient(90deg,$Cyan -50%,$Blue 100%);
+    color: $white;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+
+    &:hover{
+        cursor: pointer;
+        background: $Cyan;
+    }
+}
 .hero{
     background: url(../images/bg-curvy-mobile.svg);
     background-color: $Dark-Blue-1;
@@ -113,24 +130,16 @@ body{
     background-position: bottom;
     padding-top: 50px;
     margin-bottom: 150px;
+    .button{
+        padding: 1.2em 7em;
+        border-radius: 3em;
+    }
     .text{
         line-height: 1.5;
         font-size: 1.1rem;
     }
     .image{
         width: 100%;
-    }
-    .button{
-        background:linear-gradient(90deg,$Cyan,$Blue);
-        color: #eee;
-        border: none;
-        font-weight: bold;
-        font-size: 16px;
-        padding: 1.2em 7em;
-        border-radius: 3em;
-        &:hover{
-            cursor: pointer;
-        }
     }
 }
 
@@ -157,10 +166,144 @@ body{
         text-decoration: none;
         padding-bottom: 5px;
         border-bottom: 1px solid $Cyan;
+        &:hover{
+            color: $white;
+            border-bottom: 1px solid $white;
+            .icon{
+
+                text-shadow: 0 0 4px white;
+            }
+        }
         .icon{
             font-size: 1.1em;
             margin-left: 5px;
             text-shadow: 0 0 4px cyan;
         }
     }
+}
+
+.testimonials{
+    background-image: url(../images/bg-quotes.png);
+    background-repeat: no-repeat;
+    margin-top: 10em;
+    background-size: 30px;
+    background-position-x: 10px;
+    padding-top: 25px;
+    display: grid;
+    text-align: left;
+    gap: 2em;
+    .card{
+        padding: 1.7em;
+        border-radius: 0.30em;
+        background-color: $testimonials-bg;
+        .profile{
+            .profile-info{
+                font-size: 0.8em;
+                
+            }
+            line-height: 0.5;
+            display: flex;
+            gap: 1em;
+            align-items: center;
+            .image{
+                border-radius: 100%;
+                width: 35px;
+            }
+        }
+    }
+}
+.early-access{
+    display: grid;
+    background-color: $Dark-Blue-1;
+    margin-top: 12em;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 1.5rem 2.5rem;
+    padding-bottom: 3em;
+    box-shadow: 0 0 15px -1px #11111155;
+    form{
+        display: flex;
+        margin: 0 auto;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+        input,.button{
+            padding: 15px;
+            border-radius: 40px;
+            border: none;
+        }
+        
+    }
+    margin-bottom: -160px;
+    perspective: 1px;
+}
+footer{
+    overflow: hidden;
+background-color: $footer-bg;
+text-align: left;
+padding-top: 200px;
+padding-bottom: 15px;
+.logo{
+    margin: 30px 10px;
+}
+.text{
+    display: flex;
+    gap: 25px;
+    p{
+        margin: 0;
+    }
+    .icon{
+        padding-top: 5px;
+        font-size: 1.3em;
+    }
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+.contact{
+    li{
+        display: flex;
+        gap: 25px;
+        margin-bottom: 10px;
+        align-items: center;
+        
+        .icon{
+            font-size: 1.3em;
+        }
+    }
+
+}
+.links{
+    columns: 2;
+    display: flex;
+    line-height: 2.5;
+    flex-direction: column;
+    margin: 40px 0 ;
+}
+.social{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+        border: 1px solid $white;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        text-decoration: none;
+        color: $white;
+        &:hover{
+            border: 1px solid $Cyan;
+            color: $Cyan;
+        }
+    }
+
+
+}
 }
