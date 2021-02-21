@@ -61,14 +61,14 @@ body {
 }
 
 .container {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
 }
 
 .navbar {
   color: #eee;
   background-color: #1c2431;
-  padding: 1.2em 1.2em;
+  padding: 1.2em 0;
 }
 
 .navbar .container {
@@ -78,7 +78,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
 }
 
 .navbar .logo {
@@ -358,5 +357,93 @@ footer .social a {
 footer .social a:hover {
   border: 1px solid #65e2d9;
   color: #65e2d9;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    max-width: 1400px;
+  }
+  .hero {
+    background-image: url(../images/bg-curvy-desktop.svg);
+    background-size: contain;
+  }
+  .hero .container {
+    max-width: 570px;
+  }
+  .features {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    max-width: 900px;
+  }
+  .productive {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    gap: 5.5em;
+  }
+  .testimonials {
+    background-image: none;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    overflow: auto;
+    position: relative;
+    overflow: visible;
+  }
+  .testimonials::before {
+    content: " ";
+    background-image: url(../images/bg-quotes.png);
+    display: block;
+    width: 150px;
+    height: 200px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    z-index: -1;
+  }
+  .early-access {
+    max-width: 900px;
+  }
+  .early-access form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .early-access form .email {
+    width: 100%;
+  }
+  .early-access form .button {
+    width: 20em;
+  }
+  footer .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 1fr max-content max-content min-content;
+        grid-template-columns: 2fr 1fr -webkit-max-content -webkit-max-content -webkit-min-content;
+        grid-template-columns: 2fr 1fr max-content max-content min-content;
+    row-gap: 3em;
+    -webkit-column-gap: 5em;
+            column-gap: 5em;
+  }
+  footer .container > * {
+    margin: 0;
+    padding: 0;
+  }
+  footer .container .logo {
+    grid-column: 1/-1;
+  }
+  footer .container .text {
+    min-width: 136px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .hero {
+    background-size: cover;
+  }
 }
 /*# sourceMappingURL=style.css.map */
